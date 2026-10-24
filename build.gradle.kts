@@ -3,6 +3,11 @@ plugins {
     id("com.lagradost.cloudstream3.gradle") version "3.0.0"
 }
 
+repositories {
+    mavenCentral()
+    maven { url = java.net.URI("https://jitpack.io") }
+}
+
 cloudstream {
     setRepoUrl("https://github.com/ytademagyar-netizen/DIZIPAL")
 }
