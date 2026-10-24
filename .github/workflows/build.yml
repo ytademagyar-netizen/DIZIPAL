@@ -17,6 +17,4 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
       - name: Build Plugins
-        run: |
-          chmod +x gradlew || true
-          ./gradlew makePlugins || gradle makePlugins
+        run: gradle makePlugins
