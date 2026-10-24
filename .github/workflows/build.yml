@@ -1,20 +1,17 @@
-name: Build Extensions
+plugins {
+    kotlin("jvm") version "1.9.20"
+    id("com.lagradost.cloudstream3.gradle") version "1.1.1"
+}
 
-on:
-  push:
-    branches:
-      - main
-      - master
+repositories {
+    mavenCentral()
+    maven { url = java.net.URI("https://jitpack.io") }
+}
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Set up JDK 17
-        uses: actions/setup-java@v3
-        with:
-          java-version: '17'
-          distribution: 'temurin'
-      - name: Build Plugins
-        run: gradle makePlugins
+cloudstream {
+    setRepoUrl("https://github.com/ytademagyar-netizen/DIZIPAL")
+}
+
+dependencies {
+    implementation("com.github.BlissLabs:Cloudstream3-Libs:main")
+}
