@@ -1,3 +1,11 @@
+pluginManagement {
+    repositories {
+        maven { url = java.net.URI("https://jitpack.io") }
+        gradlePluginPortal()
+        mavenCentral()
+    }
+}
+
 plugins {
     kotlin("jvm") version "1.9.20"
     id("com.lagradost.cloudstream3.gradle") version "3.0.0"
